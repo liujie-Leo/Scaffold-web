@@ -1,10 +1,9 @@
 <template>
-  <div>About</div>
+  <div>global hello world</div>
 </template>
 
 <script>
 export default {
-
 }
 </script>
 
