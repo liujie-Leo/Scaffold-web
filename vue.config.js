@@ -1,4 +1,6 @@
 module.exports = {
+  publicPath: '/',
+  outputDir: process.env.OUTPUT_DIR,
   configureWebpack: {
     resolve: {
       alias: {

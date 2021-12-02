@@ -1,11 +1,17 @@
 <template>
   <div class="home">
-    <div>Home</div>
+    <div>
+      <img src="https://cn.vuejs.org/images/logo.svg">
+    </div>
   </div>
 </template>
 
 <script>
 export default {
+  data () {
+    return {
 
+    }
+  }
 }
 </script>
