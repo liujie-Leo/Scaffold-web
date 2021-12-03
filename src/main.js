@@ -5,6 +5,7 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 import 'components/vant/register'
+import 'assets/style/index.less'
 
 const consoleSwitch = false // 是否开发环境开启调试工具
 Vue.config.productionTip = false
