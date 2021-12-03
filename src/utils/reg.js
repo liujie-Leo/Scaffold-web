@@ -6,6 +6,7 @@
 export const number = function (value) {
   return /^[0-9]*$/.test(value)
 }
+
 // 汉字
 export const chinese = function (value) {
   return /^[\u4e00-\u9fa5]{0,}$/.test(value)

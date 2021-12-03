@@ -1,7 +1,7 @@
 /**
- * 时间处理库
+ * @时间处理库
 */
-import dayjs from "dayjs";
+import dayjs from 'dayjs'
 
 export const ymdFormat = 'YYYY-MM-DD'
 export const ymFormat = 'YYYY-MM'
@@ -23,8 +23,8 @@ export const WeekCnShortName = ['周日', '周一', '周二', '周三', '周四'
  * @format 格式
  * 默认返回时间格式为 @ymdhmFormat
 */
-export const getTimeFormat = function (time,format) {
-  let date = dayjs(time)
+export const getTimeFormat = function (time, format) {
+  const date = dayjs(time)
   return date.format(format || ymdhmFormat)
 }
 
@@ -33,17 +33,17 @@ export const getTimeFormat = function (time,format) {
  * @time 时间
  * @num 加减的数值
  * @type 加减的类型
- * years|Y          年 
- * months|M         月 
+ * years|Y          年
+ * months|M         月
  * weeks|w          周
  * days|d           天
  * hours|h          小时
  * minutes|m        分钟
  * seconds|s        秒
- * milliseconds|ms  毫秒 
+ * milliseconds|ms  毫秒
 */
 export const computeTime = function (time, num, type, format) {
-  let date = dayjs(time).add(num, type)
+  const date = dayjs(time).add(num, type)
   if (format) {
     return date.format(format)
   } else {
@@ -56,17 +56,17 @@ export const computeTime = function (time, num, type, format) {
  * @time1 时间1
  * @time2 时间2
  * @type  时间类型
- * years|y          年 
- * months|M         月 
+ * years|y          年
+ * months|M         月
  * weeks|w          周
  * days|d           天
  * hours|h          小时
  * minutes|m        分钟
  * seconds|s        秒
- * milliseconds|ms  毫秒(默认) 
+ * milliseconds|ms  毫秒(默认)
 */
-export const getTimesDiff = function (time1, time2,type) {
-  return dayjs(time1).diff(dayjs(time2),type)
+export const getTimesDiff = function (time1, time2, type) {
+  return dayjs(time1).diff(dayjs(time2), type)
 }
 
 /**
