@@ -3,28 +3,18 @@
     <div class="header">
       <img src="https://cn.vuejs.org/images/logo.svg">
       <div>Project Name</div>
+      <el-button @click="onLogin">登录</el-button>
     </div>
-    <div>
-      <van-grid>
-        <van-grid-item icon="photo-o" text="login" @click="onLogin()" />
-        <van-grid-item icon="photo-o" text="获取数据" @click="getData()" />
-        <van-grid-item icon="photo-o" text="节流" @click="onThrottle()" />
-        <van-grid-item icon="photo-o" text="防抖" @click="onDebounce" />
-        <van-grid-item icon="photo-o" text="文字" />
-        <van-grid-item icon="photo-o" text="文字" />
-        <van-grid-item icon="photo-o" text="文字" />
-      </van-grid>
-    </div>
+    <div />
   </div>
 </template>
 
 <script>
 import { login, getData } from 'api/modules/apiModule'
-import { throttle, deBounce } from 'utils/tools'
 export default {
   data () {
     return {
-
+      loading: false
     }
   },
   methods: {
@@ -34,17 +24,12 @@ export default {
         password: 'Lj416720'
       }
       const res = await login(params).catch(e => { console.log('featch') })
-      console.log(res)
+      if (res) {
+        this.$message.success('登陆成功')
+      }
     },
     async getData () {
       const res = await getData()
-      console.log(res)
-    },
-    onThrottle () {
-      throttle(() => { this.$toast({ message: 'handle', duration: 200 }) })
-    },
-    onDebounce () {
-      deBounce(() => { this.$toast({ message: 'handle' }) })
     }
   }
 
